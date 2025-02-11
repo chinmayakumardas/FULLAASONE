@@ -1,17 +1,27 @@
 
 'use client'
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useRef } from 'react';
 import PublicLayout from '../components/layout/PublicLayout';
 import Loader from './loader'; // Import the loader component (if you have it)
-
+import { VolumeUp, VolumeMute } from "@mui/icons-material"; 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isMuted, setIsMuted] = useState(true); // Track mute state
+  const videoRef = useRef(null);
+
+  const handleToggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted); // Toggle mute state
+    }
+  };
+
 
   useEffect(() => {
     // Simulate loading time (for example, 2 seconds)
     setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Adjust the time as per your requirement
+    }, 0); // Adjust the time as per your requirement
   }, []);
 
   return (
@@ -21,8 +31,20 @@ export default function HomePage() {
       ) : (
         <PublicLayout>
           {/* Hero Section */}
-          <section className="flex items-center justify-center w-full h-screen bg-blue-500">
-            <h1 className="text-6xl font-bold text-white">Hero Section</h1>
+          <section className=" w-full  ">
+                  <video
+                
+                className="w-full h-auto"
+                autoPlay
+                loop
+                muted
+              >
+                <source
+                  src="https://video.wixstatic.com/video/cf83c9_89098cea681b46f9849103ffb3f81460/720p/mp4/file.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
           </section>
 
           {/* Core Services Overview */}

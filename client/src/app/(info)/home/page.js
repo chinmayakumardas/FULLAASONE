@@ -6,7 +6,8 @@ export default function HomePage() {
      <>
       {/* Hero Section */}
       <section className="flex items-center justify-center w-full h-screen bg-blue-500">
-        <h1 className="text-6xl font-bold text-white">Hero Section</h1>
+        {/* <h1 className="text-6xl font-bold text-white">Hero Section</h1> */}
+    
       </section>
 
       {/* Core Services Overview */}

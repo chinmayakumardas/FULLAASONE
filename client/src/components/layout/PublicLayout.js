@@ -194,7 +194,7 @@ export default function PublicLayout({ children }) {
                       <NavigationMenuContent className="transition-all duration-300 group-hover:w-[100vw]">
                       <ul className="grid gap-3 p-4 lg:grid-cols-[.75fr_1fr] w-[100vw]">
                           {[
-                            { label: 'About', route: 'about' },
+                            { label: 'All Blogs', route: 'about' },
                             { label: 'Login', route: 'auth' },
                             { label: 'Contact Us', route: 'contact' }
                           ].map((component, index) => (
@@ -284,9 +284,19 @@ export default function PublicLayout({ children }) {
       </header>
       {children}
 
-      <footer style={{ textAlign: 'center', padding: '20px', backgroundColor: '#0070f3', color: 'white' }}>
-        © 2025 Home Footer
+            <footer style={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          textAlign: 'center',
+          padding: '20px',
+          backgroundColor: '#0070f3',
+          color: 'white'
+        }}>
+          © 2025 Home Footer
       </footer>
+
     </Provider>
   );
 }
