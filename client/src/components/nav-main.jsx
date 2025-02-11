@@ -65,3 +65,54 @@ export function NavMain({
     </SidebarGroup>)
   );
 }
+
+
+// import { ChevronRight } from "lucide-react";
+// import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+// import {
+//   SidebarGroup,
+//   SidebarGroupLabel,
+//   SidebarMenu,
+//   SidebarMenuItem,
+//   SidebarMenuButton,
+// } from "@/components/ui/sidebar";
+
+// export function NavMain({ items }) {
+//   return (
+//     <SidebarGroup>
+//       <SidebarGroupLabel>Platform</SidebarGroupLabel>
+//       <SidebarMenu>
+//         {items.map((item) => (
+//           <Collapsible key={item.title} asChild>
+//             <SidebarMenuItem>
+//               <SidebarMenuButton asChild tooltip={item.title}>
+//                 <a href={item.url}>
+//                   <item.icon />
+//                   <span>{item.title}</span>
+//                 </a>
+//               </SidebarMenuButton>
+//               {item.items?.length ? (
+//                 <>
+//                   <CollapsibleTrigger asChild>
+//                     <ChevronRight />
+//                   </CollapsibleTrigger>
+//                   <CollapsibleContent>
+//                     <SidebarMenu>
+//                       {item.items.map((subItem) => (
+//                         <SidebarMenuItem key={subItem.title}>
+//                           <SidebarMenuButton asChild>
+//                             <a href={subItem.url}>{subItem.title}</a>
+//                           </SidebarMenuButton>
+//                         </SidebarMenuItem>
+//                       ))}
+//                     </SidebarMenu>
+//                   </CollapsibleContent>
+//                 </>
+//               ) : null}
+//             </SidebarMenuItem>
+//           </Collapsible>
+//         ))}
+//       </SidebarMenu>
+//     </SidebarGroup>
+//   );
+// }
