@@ -1,12 +1,81 @@
-"use client"
+// "use client"
+
+// import { ChevronRight } from "lucide-react";
+
+// import {
+//   Collapsible,
+//   CollapsibleContent,
+//   CollapsibleTrigger,
+// } from "@/components/ui/collapsible"
+// import {
+//   SidebarGroup,
+//   SidebarGroupLabel,
+//   SidebarMenu,
+//   SidebarMenuAction,
+//   SidebarMenuButton,
+//   SidebarMenuItem,
+//   SidebarMenuSub,
+//   SidebarMenuSubButton,
+//   SidebarMenuSubItem,
+// } from "@/components/ui/sidebar"
+
+// export function NavMain({
+//   items
+// }) {
+//   return (
+//     (<SidebarGroup>
+//       <SidebarGroupLabel>Platform</SidebarGroupLabel>
+//       <SidebarMenu>
+//         {items.map((item) => (
+//           <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
+//             <SidebarMenuItem>
+//               <SidebarMenuButton asChild tooltip={item.title}>
+//                 <a href={item.url}>
+//                   <item.icon />
+//                   <span>{item.title}</span>
+//                 </a>
+//               </SidebarMenuButton>
+//               {item.items?.length ? (
+//                 <>
+//                   <CollapsibleTrigger asChild>
+//                     <SidebarMenuAction className="data-[state=open]:rotate-90">
+//                       <ChevronRight />
+//                       <span className="sr-only">Toggle</span>
+//                     </SidebarMenuAction>
+//                   </CollapsibleTrigger>
+//                   <CollapsibleContent>
+//                     <SidebarMenuSub>
+//                       {item.items?.map((subItem) => (
+//                         <SidebarMenuSubItem key={subItem.title}>
+//                           <SidebarMenuSubButton asChild>
+//                             <a href={subItem.url}>
+//                               <span>{subItem.title}</span>
+//                             </a>
+//                           </SidebarMenuSubButton>
+//                         </SidebarMenuSubItem>
+//                       ))}
+//                     </SidebarMenuSub>
+//                   </CollapsibleContent>
+//                 </>
+//               ) : null}
+//             </SidebarMenuItem>
+//           </Collapsible>
+//         ))}
+//       </SidebarMenu>
+//     </SidebarGroup>)
+//   );
+// }
+
+
+"use client";
 
 import { ChevronRight } from "lucide-react";
-
+import Link from "next/link"; // Import Link from next/link
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+} from "@/components/ui/collapsible";
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -17,23 +86,21 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
-export function NavMain({
-  items
-}) {
+export function NavMain({ items }) {
   return (
-    (<SidebarGroup>
+    <SidebarGroup>
       <SidebarGroupLabel>Platform</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
             <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip={item.title}>
-                <a href={item.url}>
+                <Link href={item.url}>
                   <item.icon />
                   <span>{item.title}</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
               {item.items?.length ? (
                 <>
@@ -45,12 +112,12 @@ export function NavMain({
                   </CollapsibleTrigger>
                   <CollapsibleContent>
                     <SidebarMenuSub>
-                      {item.items?.map((subItem) => (
+                      {item.items.map((subItem) => (
                         <SidebarMenuSubItem key={subItem.title}>
                           <SidebarMenuSubButton asChild>
-                            <a href={subItem.url}>
+                            <Link href={subItem.url}>
                               <span>{subItem.title}</span>
-                            </a>
+                            </Link>
                           </SidebarMenuSubButton>
                         </SidebarMenuSubItem>
                       ))}
@@ -62,57 +129,6 @@ export function NavMain({
           </Collapsible>
         ))}
       </SidebarMenu>
-    </SidebarGroup>)
+    </SidebarGroup>
   );
 }
-
-
-// import { ChevronRight } from "lucide-react";
-// import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-// import {
-//   SidebarGroup,
-//   SidebarGroupLabel,
-//   SidebarMenu,
-//   SidebarMenuItem,
-//   SidebarMenuButton,
-// } from "@/components/ui/sidebar";
-
-// export function NavMain({ items }) {
-//   return (
-//     <SidebarGroup>
-//       <SidebarGroupLabel>Platform</SidebarGroupLabel>
-//       <SidebarMenu>
-//         {items.map((item) => (
-//           <Collapsible key={item.title} asChild>
-//             <SidebarMenuItem>
-//               <SidebarMenuButton asChild tooltip={item.title}>
-//                 <a href={item.url}>
-//                   <item.icon />
-//                   <span>{item.title}</span>
-//                 </a>
-//               </SidebarMenuButton>
-//               {item.items?.length ? (
-//                 <>
-//                   <CollapsibleTrigger asChild>
-//                     <ChevronRight />
-//                   </CollapsibleTrigger>
-//                   <CollapsibleContent>
-//                     <SidebarMenu>
-//                       {item.items.map((subItem) => (
-//                         <SidebarMenuItem key={subItem.title}>
-//                           <SidebarMenuButton asChild>
-//                             <a href={subItem.url}>{subItem.title}</a>
-//                           </SidebarMenuButton>
-//                         </SidebarMenuItem>
-//                       ))}
-//                     </SidebarMenu>
-//                   </CollapsibleContent>
-//                 </>
-//               ) : null}
-//             </SidebarMenuItem>
-//           </Collapsible>
-//         ))}
-//       </SidebarMenu>
-//     </SidebarGroup>
-//   );
-// }
