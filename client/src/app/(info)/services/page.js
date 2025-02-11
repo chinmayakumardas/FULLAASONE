@@ -14,7 +14,7 @@ const page = () => {
       {/* Software Development Section */}
       <section className="flex items-center justify-center w-full h-screen bg-teal-500">
         <h1 className="text-6xl font-bold text-white">Software Development</h1>
-      </section>
+      </section>      
 
 
       {/* Managed IT Services Section */}

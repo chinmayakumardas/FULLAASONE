@@ -24,7 +24,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
 export default function AdminPannelLayout({ children }) {
-  const user = { role: 'admin' }; // Replace with actual user logic
+  const user = { role: 'auther' }; // Replace with actual user logic
 
   return (
     <div className="[--header-height:calc(theme(spacing.14))]">

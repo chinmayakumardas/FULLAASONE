@@ -241,8 +241,8 @@ export default function PublicLayout({ children }) {
                       <NavigationMenuContent className="transition-all duration-300 group-hover:w-[100vw]">
                       <ul className="grid gap-3 p-4 lg:grid-cols-[.75fr_1fr] w-[100vw]">
                           {[
-                            { label: 'Contact Us', route: 'contact' },
                             { label: 'Career', route: 'career' },
+                            { label: 'Contact Us', route: 'contact' },
                             { label: 'SiteMap', route: 'sitemap' },
                             { label: 'Login', route: 'auth' },
                           ].map((component, index) => (
